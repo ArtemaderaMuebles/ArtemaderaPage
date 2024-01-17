@@ -85,7 +85,7 @@ function displayProducts(Productlist) {
 /*Onload Function*/
 function OnLoader(){
   var pathname = window.location.pathname;
-  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html/"){
+  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html"){
     console.log("hola1");
     displayProductsSlideshow(Slideshowlist);
   } else if(pathname == "/ArtemaderaPage/Paginas/Catalogo.html"){
