@@ -87,18 +87,18 @@ window.onload = async() =>{
   /*alert(Slideshowlist[0].image)*/
   var pathname = window.location.pathname;
   switch (pathname) {
-    case "/fe/Index.html":
+    case "/index.html":
       console.log("hola1");
       displayProductsSlideshow(Slideshowlist);
       break;
-    case "/fe/Paginas/Catalogo.html":
+    case "/Paginas/Catalogo.html":
       console.log("hola2");
       displayProductsCatalogo(productlist);
       break;
-    case "/fe/Paginas/Contacto.html":
+    case "/Paginas/Contacto.html":
       console.log("hola3");
       break;
-    case "/fe/Paginas/Producto.html":
+    case "/Paginas/Producto.html":
       console.log("hola4");
       displayProducts(Productlist)
       break;
