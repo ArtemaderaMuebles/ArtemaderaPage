@@ -83,7 +83,7 @@ function displayProducts(Productlist) {
 
 
 /*Onload Function*/
-window.onload = async() =>{
+function OnLoader(){
   alert(window.location.pathname)
   var pathname = window.location.pathname;
   switch (pathname) {
