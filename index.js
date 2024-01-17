@@ -86,23 +86,19 @@ function displayProducts(Productlist) {
 function OnLoader(){
   alert(window.location.pathname)
   var pathname = window.location.pathname;
-  switch (pathname) {
-    case "/index.html":
-      console.log("hola1");
-      displayProductsSlideshow(Slideshowlist);
-      break;
-    case "/Paginas/Catalogo.html":
-      console.log("hola2");
-      displayProductsCatalogo(productlist);
-      break;
-    case "/Paginas/Contacto.html":
-      console.log("hola3");
-      break;
-    case "/Paginas/Producto.html":
-      console.log("hola4");
-      displayProducts(Productlist)
-      break;
+  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html/"){
+    console.log("hola1");
+    displayProductsSlideshow(Slideshowlist);
+  } else if(pathname == "/ArtemaderaPage/Paginas/Catalogo.html"){
+    console.log("hola2");
+    displayProductsCatalogo(productlist);
+  } else if(pathname == "/ArtemaderaPage/Paginas/Contacto.html"){
+    console.log("hola3");
+  } else if(pathname == "/ArtemaderaPage/Paginas/Producto.html"){
+    console.log("hola4");
+    displayProducts(Productlist);
   }
+  
     // Slideshow
     var slideIndex = 1;
       showDivs(slideIndex);
