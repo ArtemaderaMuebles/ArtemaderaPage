@@ -84,7 +84,7 @@ function displayProducts(Productlist) {
 
 /*Onload Function*/
 window.onload = async() =>{
-  /*alert(Slideshowlist[0].image)*/
+  alert(window.location.pathname)
   var pathname = window.location.pathname;
   switch (pathname) {
     case "/index.html":
