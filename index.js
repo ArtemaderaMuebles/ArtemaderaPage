@@ -132,6 +132,9 @@ function OnLoader(){
 
 /* BASE DE DATOS */
 
+//Esta primera parte es el listado de productos en el catalogo, que incluye el nombre y la foto de caratula
+//para agregar mas muebles deben agregar una seccion de las tipo id y cambiarle el nombre del mueble y de la image
+
 const productlist = [
   {
     id: 1,
@@ -172,6 +175,9 @@ const productlist = [
 
 ]
 
+//Esta parte controla las diapositivas de la pagina principal, donde se encuentra el saludo de entrada
+//Para cambiar las fotos simplemente modifica esta linea "Recursos/Canastos1.png" y cambia Canastos1.png por el nombre de tu foto
+//no olvidarse de poner el .png o .jpg dependiendo el tipo de tu foto
 const Slideshowlist = [
   {
     id: 1,
@@ -191,7 +197,10 @@ const Slideshowlist = [
 
 ]
 
+//Esta parte controla las fotos dentro de cada producto del catalogo, esta solamente admite 3 fotos al mismo tiempo
+//Para agregar fotos para algun producto hay que agregar una de las secciones abajo entre [ ] y cambiar la direccion de la foto en "../Recursos/Canastos1.png"
 const Productlist = [
+
   [
     {
       id: 1,
@@ -243,4 +252,5 @@ const Productlist = [
       image: "../Recursos/Canastos3.png"
     }
   ]
+
 ];
