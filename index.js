@@ -7,7 +7,7 @@ function displayProductsSlideshow(Slideshowlist) {
       `<div class="w3-display-container mySlides">
     <img src="${Slideshowlist[i].image}" style="width:100%">
     <div class="w3-display-topleft w3-container w3-padding-32">
-      <span class="w3-white w3-padding-large w3-animate-bottom">${Slideshowlist[i].name}</span>
+      
     </div>
   </div>
   `
@@ -36,7 +36,6 @@ function displayProductsCatalogo(productlist) {
         <img src="${element.image}" style="width:100%">
         <div class="w3-container">
           <h3>${element.name}</h3> 
-          <p>$ ${element.price}</p>
           <p><button class="w3-button w3-light-grey w3-block" onclick="SetCurrentItem( ${i} )" ><a href="Producto.html" class="w3-button w3-block">Ver</a></button></p>
         </div>
       </div>
@@ -138,38 +137,32 @@ function OnLoader(){
 const productlist = [
   {
     id: 1,
-    name: 'Muebles1',
-    price: 1000,
+    name: 'Biblioteca Casita',
     image: "../Recursos/Muebles1.png"
   },
   {
     id: 2,
     name: 'Muebles2',
-    price: 1020,
     image: "../Recursos/Muebles2.png"
   },
   {
     id: 3,
     name: 'Muebles3',
-    price: 1002,
     image: "../Recursos/Muebles3.png"
   },
   {
     id: 4,
     name: 'Muebles4',
-    price: 1003,
     image: "../Recursos/Muebles4.png"
   },
   {
     id: 5,
     name: 'Muebles5',
-    price: 1004,
     image: "../Recursos/Muebles5.png"
   },
   {
     id: 6,
     name: 'Muebles6',
-    price: 1005,
     image: "../Recursos/Muebles6.png"
   }
 
@@ -181,17 +174,14 @@ const productlist = [
 const Slideshowlist = [
   {
     id: 1,
-    name: 'Canastos 1',
-    image: "Recursos/Canastos1.png"
+    image: "Recursos/Portada1.jpeg"
   },
   {
     id: 2,
-    name: 'Canastos 2',
     image: "Recursos/Canastos2.png"
   },
   {
     id: 3,
-    name: 'Canastos 3',
     image: "Recursos/Canastos3.png"
   },
 
@@ -201,21 +191,21 @@ const Slideshowlist = [
 //Para agregar fotos para algun producto hay que agregar una de las secciones abajo entre [ ] y cambiar la direccion de la foto en "../Recursos/Canastos1.png"
 const Productlist = [
 
-  [
+  [ //ID1
     {
       id: 1,
-      name: 'Canastos 1',
-      image: "../Recursos/Canastos1.png"
+      name: 'Frente',
+      image: "../Recursos/BibliotecaCasita1.png"
     },
     {
       id: 2,
-      name: 'Canastos 2',
-      image: "../Recursos/Canastos2.png"
+      name: 'Costado',
+      image: "../Recursos/BibliotecaCasita2.png"
     },
     {
       id: 3,
-      name: 'Canastos 3',
-      image: "../Recursos/Canastos3.png"
+      name: ' ',
+      image: "../Recursos/BibliotecaCasita3.png"
     }
   ],
   [
