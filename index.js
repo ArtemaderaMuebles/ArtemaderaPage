@@ -142,28 +142,33 @@ const productlist = [
   },
   {
     id: 2,
-    name: 'Muebles2',
-    image: "../Recursos/Muebles2.png"
+    name: 'Modular',
+    image: "../Recursos/Modular1metro.jpeg"
   },
   {
     id: 3,
-    name: 'Muebles3',
-    image: "../Recursos/Muebles3.png"
+    name: 'Repisas doble y triple',
+    image: "../Recursos/RepisaDobleTriple.jpeg"
   },
   {
     id: 4,
-    name: 'Muebles4',
-    image: "../Recursos/Muebles4.png"
+    name: 'Combo Escritorio Banqueta',
+    image: "../Recursos/EscritorioBanqueta.jpeg"
   },
   {
     id: 5,
-    name: 'Muebles5',
-    image: "../Recursos/Muebles5.png"
+    name: 'Canastos de mimbre',
+    image: "../Recursos/Canasto3.jpeg"
   },
   {
     id: 6,
-    name: 'Muebles6',
-    image: "../Recursos/Muebles6.png"
+    name: 'Perillas de ceramica',
+    image: "../Recursos/Perillas1.jpeg"
+  },
+  {
+    id: 7,
+    name: 'ArteMaderitas y Canastos de Madera',
+    image: "../Recursos/Didacticas.jpeg"
   }
 
 ]
@@ -178,11 +183,11 @@ const Slideshowlist = [
   },
   {
     id: 2,
-    image: "Recursos/Canastos2.png"
+    image: "Recursos/Frente1.png"
   },
   {
     id: 3,
-    image: "Recursos/Canastos3.png"
+    image: "Recursos/Frente2.png"
   },
 
 ]
@@ -199,47 +204,120 @@ const Productlist = [
     },
     {
       id: 2,
-      name: 'Costado',
+      name: 'Diagonal',
       image: "../Recursos/BibliotecaCasita2.jpeg"
     },
     {
       id: 3,
-      name: 'Diagonal',
+      name: 'Costado',
       image: "../Recursos/BibliotecaCasita3.jpeg"
     }
   ],
-  [
+  [  //ID2
     {
       id: 1,
-      name: 'Pollo 1',
-      image: "../Recursos/Canastos1.png"
+      name: 'Modular de 1 metro',
+      image: "../Recursos/Modular1metro.jpeg"
     },
     {
       id: 2,
-      name: 'Pollo 2',
-      image: "../Recursos/Canastos2.png"
+      name: '',
+      image: ""
     },
     {
       id: 3,
-      name: 'Pollo 3',
-      image: "../Recursos/Canastos3.png"
+      name: '',
+      image: ""
     }
   ],
-  [
+  [ //ID 3
     {
       id: 1,
-      name: 'Cerdo 1',
-      image: "../Recursos/Canastos1.png"
+      name: 'Repisa doble y triple',
+      image: "../Recursos/RepisaDobleTriple.jpeg"
     },
     {
       id: 2,
-      name: 'Cerdo 2',
-      image: "../Recursos/Canastos2.png"
+      name: '',
+      image: ""
     },
     {
       id: 3,
-      name: 'Cerdo 3',
-      image: "../Recursos/Canastos3.png"
+      name: '',
+      image: ""
+    }
+  ],
+[ //ID4
+    {
+      id: 1,
+      name: 'Escritorio de 1 metro y Banqueta baja',
+      image: "../Recursos/EscritorioBanqueta.jpeg"
+    },
+    {
+      id: 2,
+      name: '',
+      image: ""
+    },
+    {
+      id: 3,
+      name: 'Costado',
+      image: ""
+    }
+  ],
+[ //ID5
+    {
+      id: 1,
+      name: 'Canasto alto',
+      image: "../Recursos/Canasto1.jpeg"
+    },
+    {
+      id: 2,
+      name: 'Canasto bajo',
+      image: "../Recursos/Canasto2.jpeg"
+    },
+    {
+      id: 3,
+      name: 'Canasto redondo',
+      image: "../Recursos/Canasto4.jpeg"
+    },
+    {
+      id: 3,
+      name: 'Canasto con manija',
+      image: "../Recursos/Canasto5.jpeg"
+    }
+  ],
+[ //ID6
+    {
+      id: 1,
+      name: 'Set 1',
+      image: "../Recursos/Perillas1.jpeg"
+    },
+    {
+      id: 2,
+      name: 'Set 2',
+      image: "../Recursos/Perillas2.jpeg"
+    },
+    {
+      id: 3,
+      name: 'Set 3',
+      image: "../Recursos/Perillas3.jpeg"
+    }
+  ],
+[ //ID7
+    {
+      id: 1,
+      name: 'Canastos y ArteMaderitas',
+      image: "../Recursos/Didacticas.jpeg"
+    },
+    {
+      id: 2,
+      name: 'Canastos de madera',
+      image: "../Recursos/CanastoMadera.jpeg"
+    },
+    {
+      id: 3,
+      name: '',
+      image: ""
     }
   ]
 
