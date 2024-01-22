@@ -138,7 +138,7 @@ const productlist = [
   {
     id: 1,
     name: 'Biblioteca Casita',
-    image: "../Recursos/Muebles1.png"
+    image: "../Recursos/BibliotecaCasita1.jpeg"
   },
   {
     id: 2,
@@ -195,17 +195,17 @@ const Productlist = [
     {
       id: 1,
       name: 'Frente',
-      image: "../Recursos/BibliotecaCasita1.png"
+      image: "../Recursos/BibliotecaCasita1.jpeg"
     },
     {
       id: 2,
       name: 'Costado',
-      image: "../Recursos/BibliotecaCasita2.png"
+      image: "../Recursos/BibliotecaCasita2.jpeg"
     },
     {
       id: 3,
-      name: ' ',
-      image: "../Recursos/BibliotecaCasita3.png"
+      name: 'Diagonal',
+      image: "../Recursos/BibliotecaCasita3.jpeg"
     }
   ],
   [
