@@ -1,29 +1,12 @@
 function displayProductsSlideshow(Slideshowlist) {
-  let i = 0;
   let productsHTML = ' ';
-  for (i = 0; i < 3; i++) {
-    console.log(Slideshowlist[i].image);
-    productsHTML +=
-      `<div class="w3-display-container mySlides">
-    <img src="${Slideshowlist[i].image}" style="width:100%">
-    <div class="w3-display-topleft w3-container w3-padding-32">
-      
-    </div>
-  </div>
-  `
-  }
+  productsHTML += `<div class="w3-content w3-section" style="max-width:500px">`
+  Slideshowlist.forEach(element => {
+    productsHTML += `<img class="mySlides" src="${element.image}" style="width:100%">`
+  });
 
-  productsHTML += `<div class="w3-container w3-dark-grey w3-padding w3-xlarge">
-  <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
-  <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
-
-    <div class="w3-center">
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-      </div>
-    </div>`
-  document.getElementById('Slideshow').innerHTML = productsHTML;
+  productsHTML += `</div>`
+document.getElementById('Slideshow').innerHTML = productsHTML;
 }
 
 function displayProductsCatalogo(productlist) {
@@ -53,76 +36,67 @@ function SetCurrentItem(id) {
 
 function displayProducts(Productlist) {
   let productsHTML = ' ';
+  let descriptionHTML = ' ';
   let i = 0;
   var CurrentItem = localStorage.getItem('Item');
   console.log(CurrentItem);
-  for(i=0;i<3;i++){
-  
-    productsHTML +=
-      `<div class="w3-display-container mySlides">
-    <img src="${Productlist[CurrentItem][i].image}" style="width:100%">
+  Productlist[CurrentItem].forEach(element => {
+    productsHTML +=`<div class="w3-display-container mySlides">
+    <img src="${element.image}" style="width:100%">
     <div class="w3-display-topleft w3-container w3-padding-32">
-      <span class="w3-white w3-padding-large w3-animate-bottom">${Productlist[CurrentItem][i].name}</span>
+      <span class="w3-white w3-padding-large w3-animate-bottom" style="opacity:0.7">${element.name}</span>
     </div>
   </div>`
-    
-  }
+  });
+  
   productsHTML += `<div class="w3-container w3-dark-grey w3-padding w3-xlarge">
   <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
   <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
 
-  <div class="w3-center">
-    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-    <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-  </div>
-</div>`
+  <div class="w3-center">`
+Productlist[CurrentItem].forEach(element => {
+  productsHTML += `<span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(${i})"></span>`
+  i++;
+  })
+  productsHTML +=`</div>
+  </div>`
+
   document.getElementById('Product').innerHTML = productsHTML;
+  descriptionHTML += `<p>${Productlist[CurrentItem][0].description}</p>`
+  document.getElementById('Description').innerHTML = descriptionHTML;
 }
 
 
 /*Onload Function*/
 function OnLoader(){
   var pathname = window.location.pathname;
-  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html"){
+  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html" || pathname == "/index.html"){
     console.log("hola1");
+    var myIndex = 0;
     displayProductsSlideshow(Slideshowlist);
-  } else if(pathname == "/ArtemaderaPage/Paginas/Catalogo.html"){
+    carousel();
+  } else if(pathname == "/ArtemaderaPage/Paginas/Catalogo.html" || pathname == "/Paginas/Catalogo.html"){
     console.log("hola2");
     displayProductsCatalogo(productlist);
-  } else if(pathname == "/ArtemaderaPage/Paginas/Contacto.html"){
+  } else if(pathname == "/ArtemaderaPage/Paginas/Producto.html" || pathname == "/Paginas/Producto.html"){
     console.log("hola3");
-  } else if(pathname == "/ArtemaderaPage/Paginas/Producto.html"){
-    console.log("hola4");
     displayProducts(Productlist);
   }
   
-    // Slideshow
-    var slideIndex = 1;
-      showDivs(slideIndex);
+    
 
-      function plusDivs(n) {
-        showDivs(slideIndex += n);
-      }
-
-      function currentDiv(n) {
-        showDivs(slideIndex = n);
-      }
-
-      function showDivs(n) {
+      //automatic slideshow
+      
+      function carousel() {
         var i;
         var x = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demodots");
-        if (n > x.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = x.length} ;
         for (i = 0; i < x.length; i++) {
           x[i].style.display = "none";  
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" w3-white", "");
-        }
-        x[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " w3-white";
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 5000); // Change image every 2 seconds
       }
 }
 
@@ -188,7 +162,7 @@ const Slideshowlist = [
   {
     id: 3,
     image: "Recursos/Frente2.png"
-  },
+  }
 
 ]
 
@@ -200,6 +174,7 @@ const Productlist = [
     {
       id: 1,
       name: 'Frente',
+      description: 'Biblioteca Casita1',
       image: "../Recursos/BibliotecaCasita1.jpeg"
     },
     {
@@ -217,57 +192,31 @@ const Productlist = [
     {
       id: 1,
       name: 'Modular de 1 metro',
+      description: 'Biblioteca Casita',
       image: "../Recursos/Modular1metro.jpeg"
-    },
-    {
-      id: 2,
-      name: '',
-      image: ""
-    },
-    {
-      id: 3,
-      name: '',
-      image: ""
     }
   ],
   [ //ID 3
     {
       id: 1,
       name: 'Repisa doble y triple',
+      description: 'Biblioteca Casita',
       image: "../Recursos/RepisaDobleTriple.jpeg"
-    },
-    {
-      id: 2,
-      name: '',
-      image: ""
-    },
-    {
-      id: 3,
-      name: '',
-      image: ""
     }
   ],
 [ //ID4
     {
       id: 1,
       name: 'Escritorio de 1 metro y Banqueta baja',
+      description: 'Biblioteca Casita',
       image: "../Recursos/EscritorioBanqueta.jpeg"
-    },
-    {
-      id: 2,
-      name: '',
-      image: ""
-    },
-    {
-      id: 3,
-      name: 'Costado',
-      image: ""
     }
   ],
 [ //ID5
     {
       id: 1,
       name: 'Canasto alto',
+      description: 'Biblioteca Casita',
       image: "../Recursos/Canasto1.jpeg"
     },
     {
@@ -290,6 +239,7 @@ const Productlist = [
     {
       id: 1,
       name: 'Set 1',
+      description: 'Biblioteca Casita',
       image: "../Recursos/Perillas1.jpeg"
     },
     {
@@ -307,17 +257,13 @@ const Productlist = [
     {
       id: 1,
       name: 'Canastos y ArteMaderitas',
+      description: 'Biblioteca Casita',
       image: "../Recursos/Didacticas.jpeg"
     },
     {
       id: 2,
       name: 'Canastos de madera',
       image: "../Recursos/CanastoMadera.jpeg"
-    },
-    {
-      id: 3,
-      name: '',
-      image: ""
     }
   ]
 
