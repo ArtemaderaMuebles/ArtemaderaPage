@@ -11,8 +11,11 @@ document.getElementById('Slideshow').innerHTML = productsHTML;
 
 function displayProductsCatalogo(productlist) {
   let productsHTML = ' ';
+  var CurrentItem = localStorage.getItem('Categoria');
   let i = 0;
+  console.log(CurrentItem);
   productlist.forEach(element => {
+    if(element.categoria == CurrentItem){
     productsHTML +=
       `<div class="w3-third w3-margin-bottom">
       <div class="w3-card-4">
@@ -23,6 +26,7 @@ function displayProductsCatalogo(productlist) {
         </div>
       </div>
     </div>`
+    }
     i++;
   });
   document.getElementById('about').innerHTML = productsHTML;
@@ -31,6 +35,32 @@ function displayProductsCatalogo(productlist) {
 function SetCurrentItem(id) {
   localStorage.setItem('Item', id);
   var CurrentItem = localStorage.getItem('Item');
+  console.log(CurrentItem);
+}
+
+//new
+function displayProductsCategorias(Categorias) {
+  let categoriaHTML = ' ';
+  let i = 0;
+  Categorias.forEach(element => {
+    categoriaHTML +=
+      `<div class="w3-half w3-margin-bottom">
+      <div class="w3-col" >
+        <img src="${element.image}" style="width:100%">
+        <div class="w3-container">
+          <h3>${element.name}</h3> 
+          <p><button class="w3-button w3-light-grey w3-block" onclick="SetCurrentCategoria( ${i} )" ><a href="Catalogo.html" class="w3-button w3-block">Ver</a></button></p>
+        </div>
+      </div>
+    </div>`
+    i++;
+  });
+  document.getElementById('aboutCategorias').innerHTML = categoriaHTML;
+}
+
+function SetCurrentCategoria(id) {
+  localStorage.setItem('Categoria', id);
+  var CurrentItem = localStorage.getItem('Categoria');
   console.log(CurrentItem);
 }
 
@@ -81,6 +111,9 @@ function OnLoader(){
     console.log("hola3");
     displayProducts(Productlist);
     showDivs(slideIndex);
+  } else if(pathname == "/ArtemaderaPage/Paginas/Categorias.html" || pathname == "/Paginas/Categorias.html"){
+    console.log("hola2=4");
+    displayProductsCategorias(Categorias);
   }
 
 }
@@ -128,43 +161,90 @@ function carousel() {
 
 /* BASE DE DATOS */
 
-//Esta primera parte es el listado de productos en el catalogo, que incluye el nombre y la foto de caratula
+
+const Categorias = [
+{
+  id: 1,
+  name: 'Bibliotecas',
+  image: '../Recursos/BibliotecaCasita1.jpeg'
+},
+{
+  id: 2,
+  name: 'Modulares',
+  image: '../Recursos/Modular1metro.jpeg'
+},
+{
+  id: 3,
+  name: 'Repisas',
+  image: '../Recursos/RepisaDobleTriple.jpeg'
+},
+{
+  id: 4,
+  name: 'Escritorios',
+  image: '../Recursos/EscritorioBanqueta.jpeg'
+},
+{
+  id: 5,
+  name: 'Canastos',
+  image: '../Recursos/Canasto3.jpeg'
+},
+{
+  id: 6,
+  name: 'Perillas',
+  image: '../Recursos/Perillas1.jpeg'
+},
+{
+  id: 7,
+  name: 'Didacticas',
+  image: '../Recursos/Didacticas.jpeg'
+}
+]
+
+
+//Esta parte es el listado de productos en el catalogo, que incluye el nombre y la foto de caratula
 //para agregar mas muebles deben agregar una seccion de las tipo id y cambiarle el nombre del mueble y de la image
 
 const productlist = [
   {
     id: 1,
     name: 'Biblioteca Casita',
+    categoria: 0,
     image: "../Recursos/BibliotecaCasita1.jpeg"
   },
   {
     id: 2,
     name: 'Modular',
+    categoria: 1,
     image: "../Recursos/Modular1metro.jpeg"
   },
   {
     id: 3,
     name: 'Repisas doble y triple',
+    categoria: 2,
     image: "../Recursos/RepisaDobleTriple.jpeg"
   },
   {
     id: 4,
     name: 'Combo Escritorio Banqueta',
+    categoria: 3,
     image: "../Recursos/EscritorioBanqueta.jpeg"
   },
   {
     id: 5,
     name: 'Canastos de mimbre',
+    categoria: 4,
     image: "../Recursos/Canasto3.jpeg"
   },
   {
     id: 6,
     name: 'Perillas de ceramica',
+    categoria: 5,
     image: "../Recursos/Perillas1.jpeg"
   },
   {
     id: 7,
     name: 'ArteMaderitas y Canastos de Madera',
+      categoria: 6,
     image: "../Recursos/Didacticas.jpeg"
   }
 

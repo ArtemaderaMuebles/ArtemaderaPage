@@ -4,6 +4,7 @@
     <title>Artemadera Muebles</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/Recursos/Logo2.jpg">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,7 @@
     <script src="index.js" type="text/javascript"></script>
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style>
 html,body,h1,h2,h3,h4 {
   font-family: 'Bitter', serif;
@@ -43,6 +45,25 @@ body{
 #LinkBack{
   background-color: rgb(154, 170, 216);
 }
+
+  .float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
 </style>
 </head>
   <body onload="OnLoader()">
@@ -61,7 +82,7 @@ body{
           <a href="#top" class="w3-button w3-block">HOME</a>
         </div>
         <div class="w3-col s3 w3-padding-top-24">
-          <a href="Paginas/Catalogo.html"
+          <a href="Paginas/Categorias.html"
             class="w3-button w3-block">CATALOGO</a>
         </div>
       </div>
@@ -79,7 +100,7 @@ body{
       <!-- Slideshow -->
 
       <!-- Grid -->
-      <div class="w3-row w3-container">
+      <div class="w3-row w3-container w3-padding-16">
         <div class="w3-center w3-padding-64">
           <span
             class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Que
@@ -96,24 +117,26 @@ body{
           class="w3-col l3 m6 w3-topbar w3-bottombar w3-border-black w3-container w3-padding-16 w3-pale-yellow">
           <h3>Atencion</h3>
           <p>Somos un negocio de tamaño medio con personal siempre dispuesto a
-            responder .</p>
+            responder.</p>
         </div>
 
         <div
           class="w3-col l3 m6 w3-topbar w3-bottombar w3-border-black w3-container w3-padding-16 w3-pale-green">
           <h3>Envios</h3>
           <p>Podemos realizar envios a cualquier parte del pais a traves de
-            correo argentino trolasas.</p>
+            correo argentino.</p>
         </div>
 
         <div
           class="w3-col l3 m6 w3-topbar w3-bottombar w3-border-black w3-container w3-padding-16 w3-pale-red">
           <h3>Showroom</h3>
           <p>Contamos con un local fisico ubicado en la hermosa ciudad de
-            Colonia Caroya culisueltas.</p>
+            Colonia Caroya.</p>
         </div>
       </div>
-
+      <div id="Mapa" class="w3-light-blue w3-padding-16" style="text-align: center;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d622.3155092903772!2d-64.09312059273387!3d-30.994735165923696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432626eac44a045%3A0x77059f9c632ecf69!2sArtemadera%20muebles!5e0!3m2!1ses-419!2sar!4v1706020786012!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+       </div>
       <!-- Footer -->
 
       <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
@@ -121,10 +144,13 @@ body{
         <a href="#" class="w3-button w3-black w3-margin"><i
             class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
         <div class="w3-xlarge w3-section">
-          <a href="https://wa.me/+543525460100"><i class="fa fa-whatsapp  w3-hover-opacity"></i></a>
+          <a href="https://wa.me/+543525460100" target="_blank"><i class="fa fa-whatsapp  w3-hover-opacity"></i></a>
           <i class="fa fa-instagram w3-hover-opacity"></i>
           <i class="fa fa-facebook-official w3-hover-opacity"></i>
         </div>
+        <a href="https://wa.me/+543525460100" class="float" target="_blank">
+          <i class="fa fa-whatsapp my-float"></i>
+          </a>
       </footer>
     </body>
   </html>
