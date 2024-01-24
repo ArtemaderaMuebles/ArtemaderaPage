@@ -6,7 +6,7 @@ function displayProductsSlideshow(Slideshowlist) {
   });
 
   productsHTML += `</div>`
-document.getElementById('Slideshow').innerHTML = productsHTML;
+  document.getElementById('Slideshow').innerHTML = productsHTML;
 }
 
 function displayProductsCatalogo(productlist) {
@@ -15,9 +15,9 @@ function displayProductsCatalogo(productlist) {
   let i = 0;
   console.log(CurrentItem);
   productlist.forEach(element => {
-    if(element.categoria == CurrentItem){
-    productsHTML +=
-      `<div class="w3-third w3-margin-bottom">
+    if (element.categoria == CurrentItem) {
+      productsHTML +=
+        `<div class="w3-third w3-margin-bottom">
       <div class="w3-card-4">
         <img src="${element.image}" style="width:100%">
         <div class="w3-container">
@@ -71,24 +71,21 @@ function displayProducts(Productlist) {
   var CurrentItem = localStorage.getItem('Item');
   console.log(CurrentItem);
   Productlist[CurrentItem].forEach(element => {
-    productsHTML +=`<div class="w3-display-container mySlides">
+    productsHTML += `<div class="w3-display-container mySlides">
     <img src="${element.image}" style="width:100%">
-    <div class="w3-display-topleft w3-container w3-padding-32">
-      <span class="w3-white w3-padding-large w3-animate-bottom" style="opacity:0.7">${element.name}</span>
-    </div>
   </div>`
   });
-  
+
   productsHTML += `<div class="w3-container w3-dark-grey w3-padding w3-xlarge">
   <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
   <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
 
   <div class="w3-center">`
-Productlist[CurrentItem].forEach(element => {
-  productsHTML += `<span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(${i})"></span>`
-  i++;
+  Productlist[CurrentItem].forEach(element => {
+    productsHTML += `<span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(${i})"></span>`
+    i++;
   })
-  productsHTML +=`</div>
+  productsHTML += `</div>
   </div>`
 
   document.getElementById('Product').innerHTML = productsHTML;
@@ -98,20 +95,20 @@ Productlist[CurrentItem].forEach(element => {
 
 
 /*Onload Function*/
-function OnLoader(){
+function OnLoader() {
   var pathname = window.location.pathname;
-  if(pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html" || pathname == "/index.html"){
+  if (pathname == "/ArtemaderaPage/" || pathname == "/ArtemaderaPage/index.html" || pathname == "/index.html") {
     console.log("hola1");
     displayProductsSlideshow(Slideshowlist);
     carousel();
-  } else if(pathname == "/ArtemaderaPage/Paginas/Catalogo.html" || pathname == "/Paginas/Catalogo.html"){
+  } else if (pathname == "/ArtemaderaPage/Paginas/Catalogo.html" || pathname == "/Paginas/Catalogo.html") {
     console.log("hola2");
     displayProductsCatalogo(productlist);
-  } else if(pathname == "/ArtemaderaPage/Paginas/Producto.html" || pathname == "/Paginas/Producto.html"){
+  } else if (pathname == "/ArtemaderaPage/Paginas/Producto.html" || pathname == "/Paginas/Producto.html") {
     console.log("hola3");
     displayProducts(Productlist);
     showDivs(slideIndex);
-  } else if(pathname == "/ArtemaderaPage/Paginas/Categorias.html" || pathname == "/Paginas/Categorias.html"){
+  } else if (pathname == "/ArtemaderaPage/Paginas/Categorias.html" || pathname == "/Paginas/Categorias.html") {
     console.log("hola2=4");
     displayProductsCategorias(Categorias);
   }
@@ -123,81 +120,86 @@ function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
+  if (myIndex > x.length) { myIndex = 1 }
+  x[myIndex - 1].style.display = "block";
   setTimeout(carousel, 5000); // Change image every 2 seconds
 }
 
-  //manual slideshow
-    var slideIndex = 1;
-    
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-    
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
-    }
-    
-    function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demodots");
-      if (n > x.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = x.length} ;
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-      }
-      x[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " w3-white";
-    }
+//manual slideshow
+var slideIndex = 1;
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = x.length };
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " w3-white";
+}
 
 
 /* BASE DE DATOS */
 
 
 const Categorias = [
-{
-  id: 1,
-  name: 'Bibliotecas',
-  image: '../Recursos/BibliotecaCasita1.jpeg'
-},
-{
-  id: 2,
-  name: 'Modulares',
-  image: '../Recursos/Modular1metro.jpeg'
-},
-{
-  id: 3,
-  name: 'Repisas',
-  image: '../Recursos/RepisaDobleTriple.jpeg'
-},
-{
-  id: 4,
-  name: 'Escritorios',
-  image: '../Recursos/EscritorioBanqueta.jpeg'
-},
-{
-  id: 5,
-  name: 'Canastos',
-  image: '../Recursos/Canasto3.jpeg'
-},
-{
-  id: 6,
-  name: 'Perillas',
-  image: '../Recursos/Perillas1.jpeg'
-},
-{
-  id: 7,
-  name: 'Didacticas',
-  image: '../Recursos/Didacticas.jpeg'
-}
+  {
+    id: 0,
+    name: 'Bibliotecas',
+    image: '../Recursos/BibliotecaCasita1.jpeg'
+  },
+  {
+    id: 1,
+    name: 'Modulares',
+    image: '../Recursos/Modular1metro.jpeg'
+  },
+  {
+    id: 2,
+    name: 'Repisas',
+    image: '../Recursos/RepisaDobleTriple.jpeg'
+  },
+  {
+    id: 3,
+    name: 'Escritorios',
+    image: '../Recursos/EscritorioBanqueta.jpeg'
+  },
+  {
+    id: 4,
+    name: 'Canastos',
+    image: '../Recursos/Canasto3.jpeg'
+  },
+  {
+    id: 5,
+    name: 'Perillas',
+    image: '../Recursos/Perillas1.jpeg'
+  },
+  {
+    id: 6,
+    name: 'Montesori',
+    image: '../Recursos/Didacticas.jpeg'
+  },
+  {
+    id: 7,
+    name: 'Decor',
+    image: '../Recursos/Vinoteca1.jpg'
+  }
 ]
 
 
@@ -213,39 +215,69 @@ const productlist = [
   },
   {
     id: 2,
+    name: 'Bibliotecas Clásicas',
+    categoria: 0,
+    image: "../Recursos/Biblioteca3.jpg"
+  },
+  {
+    id: 3,
     name: 'Modular',
     categoria: 1,
     image: "../Recursos/Modular1metro.jpeg"
   },
   {
-    id: 3,
+    id: 4,
     name: 'Repisas doble y triple',
     categoria: 2,
     image: "../Recursos/RepisaDobleTriple.jpeg"
   },
   {
-    id: 4,
+    id: 5,
     name: 'Combo Escritorio Banqueta',
     categoria: 3,
     image: "../Recursos/EscritorioBanqueta.jpeg"
   },
   {
-    id: 5,
+    id: 6,
     name: 'Canastos de mimbre',
     categoria: 4,
     image: "../Recursos/Canasto3.jpeg"
   },
   {
-    id: 6,
+    id: 7,
     name: 'Perillas de ceramica',
     categoria: 5,
     image: "../Recursos/Perillas1.jpeg"
   },
   {
-    id: 7,
+    id: 8,
     name: 'ArteMaderitas y Canastos de Madera',
-      categoria: 6,
+    categoria: 6,
     image: "../Recursos/Didacticas.jpeg"
+  },
+  {
+    id: 9,
+    name: 'Biblioteca Balconera',
+    categoria: 0,
+    image: "../Recursos/BibliotecaBalconera1.jpg"
+  },
+  {
+    id: 10,
+    name: 'Vinoteca',
+    categoria: 7,
+    image: "../Recursos/Vinoteca1.jpg"
+  },
+  {
+    id: 11,
+    name: 'Tablas de picar',
+    categoria: 7,
+    image: "../Recursos/TablaPicada1.jpg"
+  },
+  {
+    id: 12,
+    name: 'Maceteros',
+    categoria: 7,
+    image: "../Recursos/Macetero1.jpg"
   }
 
 ]
@@ -276,97 +308,158 @@ const Productlist = [
   [ //ID1
     {
       id: 1,
-      name: 'Frente',
-      description: 'Biblioteca Casita1',
+      description: 'Bibliotecas Estilo Casita, en 60, 80 y 100 cm',
       image: "../Recursos/BibliotecaCasita1.jpeg"
     },
     {
       id: 2,
-      name: 'Diagonal',
       image: "../Recursos/BibliotecaCasita2.jpeg"
     },
     {
       id: 3,
-      name: 'Costado',
       image: "../Recursos/BibliotecaCasita3.jpeg"
+    },
+    {
+      id: 4,
+      image: "../Recursos/BibliotecaCasita4.jpg"
+    },
+    {
+      id: 5,
+      image: "../Recursos/BibliotecaCasita5.jpg"
+    }
+  ],
+  [ //ID1
+    {
+      id: 1,
+      description: 'Biblioteca Clásica de 40, 60 y 80 cm',
+      image: "../Recursos/Biblioteca1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Biblioteca2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/Biblioteca3.jpg"
     }
   ],
   [  //ID2
     {
       id: 1,
-      name: 'Modular de 1 metro',
-      description: 'Biblioteca Casita',
+      description: 'Modular de 080, 100, 120, 150 y 200 cm',
       image: "../Recursos/Modular1metro.jpeg"
     }
   ],
   [ //ID 3
     {
       id: 1,
-      name: 'Repisa doble y triple',
-      description: 'Biblioteca Casita',
+      description: 'Repisa doble y triple',
       image: "../Recursos/RepisaDobleTriple.jpeg"
     }
   ],
-[ //ID4
+  [ //ID4
     {
       id: 1,
-      name: 'Escritorio de 1 metro y Banqueta baja',
-      description: 'Biblioteca Casita',
+      description: 'Combo Escritorio y Banqueta',
       image: "../Recursos/EscritorioBanqueta.jpeg"
     }
   ],
-[ //ID5
+  [ //ID5
     {
       id: 1,
-      name: 'Canasto alto',
-      description: 'Biblioteca Casita',
+      description: 'Canastos de mimbre',
       image: "../Recursos/Canasto1.jpeg"
     },
     {
       id: 2,
-      name: 'Canasto bajo',
       image: "../Recursos/Canasto2.jpeg"
     },
     {
       id: 3,
-      name: 'Canasto redondo',
       image: "../Recursos/Canasto4.jpeg"
     },
     {
-      id: 3,
-      name: 'Canasto con manija',
+      id: 4,
       image: "../Recursos/Canasto5.jpeg"
     }
   ],
-[ //ID6
+  [ //ID6
     {
       id: 1,
-      name: 'Set 1',
-      description: 'Biblioteca Casita',
+      description: 'Perillas de ceramica y metálicas',
       image: "../Recursos/Perillas1.jpeg"
     },
     {
       id: 2,
-      name: 'Set 2',
       image: "../Recursos/Perillas2.jpeg"
     },
     {
       id: 3,
-      name: 'Set 3',
       image: "../Recursos/Perillas3.jpeg"
     }
   ],
-[ //ID7
+  [ //ID7
     {
       id: 1,
-      name: 'Canastos y ArteMaderitas',
-      description: 'Biblioteca Casita',
+      description: 'Maderitas didácticas seleccionadas y Cajón de madera con ruedas',
       image: "../Recursos/Didacticas.jpeg"
     },
     {
       id: 2,
-      name: 'Canastos de madera',
-      image: "../Recursos/CanastoMadera.jpeg"
+      image: "../Recursos/CanastoMadera1.jpeg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/CanastoMadera2.jpg"
+    },
+    {
+      id: 4,
+      image: "../Recursos/CanastoMadera3.jpg"
+    }
+  ],
+  [ //ID1
+    {
+      id: 1,
+      description: 'Biblioteca Balconera de tres o cuatro niveles',
+      image: "../Recursos/BibliotecaBalconera1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/BibliotecaBalconera2.jpg"
+    }
+
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Vinotecas pequeñas, medianas y grandes',
+      image: "../Recursos/Vinoteca1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Vinoteca2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/Vinoteca3.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Tablas de picada pequeñas y medianas',
+      image: "../Recursos/TablaPicada1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/TablaPicada2.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Maceteros de multiples medidas',
+      image: "../Recursos/Macetero1.jpg"
     }
   ]
 
