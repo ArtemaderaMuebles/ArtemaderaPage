@@ -17,7 +17,7 @@ function displayProductsCatalogo(productlist) {
   productlist.forEach(element => {
     if (element.categoria == CurrentItem) {
       productsHTML +=
-        `<div class="w3-third w3-margin-bottom">
+        `<div class="w3-quarter w3-margin-bottom">
       <div class="w3-card-4">
         <img src="${element.image}" style="width:100%">
         <div class="w3-container">
@@ -158,22 +158,41 @@ function showDivs(n) {
 
 /* BASE DE DATOS */
 
+//Esta parte controla las diapositivas de la pagina principal, donde se encuentra el saludo de entrada
+//Para cambiar las fotos simplemente modifica esta linea "Recursos/Canastos1.png" y cambia Canastos1.png por el nombre de tu foto
+//no olvidarse de poner el .png o .jpg dependiendo el tipo de tu foto
+const Slideshowlist = [
+  {
+    id: 1,
+    image: "Recursos/Portada1.jpeg"
+  },
+  {
+    id: 2,
+    image: "Recursos/Frente1.png"
+  },
+  {
+    id: 3,
+    image: "Recursos/Frente2.png"
+  }
+
+]
 
 const Categorias = [
+
   {
     id: 0,
-    name: 'Bibliotecas',
-    image: '../Recursos/BibliotecaCasita1.jpeg'
+    name: 'Dormitorio',
+    image: '../Recursos/MesadeLuz1.jpg'
   },
   {
     id: 1,
-    name: 'Modulares',
+    name: 'Comedor',
     image: '../Recursos/Modular1metro.jpeg'
   },
   {
     id: 2,
-    name: 'Repisas',
-    image: '../Recursos/RepisaDobleTriple.jpeg'
+    name: 'Estantes',
+    image: '../Recursos/BibliotecaCasita1.jpeg'
   },
   {
     id: 3,
@@ -182,22 +201,12 @@ const Categorias = [
   },
   {
     id: 4,
-    name: 'Canastos',
-    image: '../Recursos/Canasto3.jpeg'
-  },
-  {
-    id: 5,
-    name: 'Perillas',
-    image: '../Recursos/Perillas1.jpeg'
-  },
-  {
-    id: 6,
-    name: 'Montesori',
+    name: 'Infantil',
     image: '../Recursos/Didacticas.jpeg'
   },
   {
-    id: 7,
-    name: 'Decor',
+    id: 5,
+    name: 'Deco',
     image: '../Recursos/Vinoteca1.jpg'
   }
 ]
@@ -210,13 +219,13 @@ const productlist = [
   {
     id: 1,
     name: 'Biblioteca Casita',
-    categoria: 0,
+    categoria: 2,
     image: "../Recursos/BibliotecaCasita1.jpeg"
   },
   {
     id: 2,
     name: 'Bibliotecas Clásicas',
-    categoria: 0,
+    categoria: 2,
     image: "../Recursos/Biblioteca3.jpg"
   },
   {
@@ -240,7 +249,7 @@ const productlist = [
   {
     id: 6,
     name: 'Canastos de mimbre',
-    categoria: 4,
+    categoria: 5,
     image: "../Recursos/Canasto3.jpeg"
   },
   {
@@ -251,55 +260,127 @@ const productlist = [
   },
   {
     id: 8,
-    name: 'ArteMaderitas y Canastos de Madera',
-    categoria: 6,
+    name: 'ArteMaderitas y cajones de madera',
+    categoria: 4,
     image: "../Recursos/Didacticas.jpeg"
   },
   {
     id: 9,
     name: 'Biblioteca Balconera',
-    categoria: 0,
+    categoria: 2,
     image: "../Recursos/BibliotecaBalconera1.jpg"
   },
   {
     id: 10,
     name: 'Vinoteca',
-    categoria: 7,
+    categoria: 5,
     image: "../Recursos/Vinoteca1.jpg"
   },
   {
     id: 11,
     name: 'Tablas de picar',
-    categoria: 7,
+    categoria: 5,
     image: "../Recursos/TablaPicada1.jpg"
   },
   {
     id: 12,
     name: 'Maceteros',
-    categoria: 7,
+    categoria: 5,
     image: "../Recursos/Macetero1.jpg"
   }
-
-]
-
-//Esta parte controla las diapositivas de la pagina principal, donde se encuentra el saludo de entrada
-//Para cambiar las fotos simplemente modifica esta linea "Recursos/Canastos1.png" y cambia Canastos1.png por el nombre de tu foto
-//no olvidarse de poner el .png o .jpg dependiendo el tipo de tu foto
-const Slideshowlist = [
+  ,
   {
-    id: 1,
-    image: "Recursos/Portada1.jpeg"
+    id: 13,
+    name: 'Mesitas de luz',
+    categoria: 0,
+    image: "../Recursos/MesadeLuz1.jpg"
   },
   {
-    id: 2,
-    image: "Recursos/Frente1.png"
+    id: 14,
+    name: 'Biblioteca Baja',
+    categoria: 2,
+    image: "../Recursos/BibliotecaBaja1.jpg"
   },
   {
-    id: 3,
-    image: "Recursos/Frente2.png"
+    id: 15,
+    name: 'Mesa Classic pata recta',
+    categoria: 1,
+    image: "../Recursos/Mesa1.jpg"
+  },
+  {
+    id: 16,
+    name: 'Ordenador',
+    categoria: 2,
+    image: "../Recursos/Ordenador1.jpg"
+  },
+  {
+    id: 17,
+    name: 'Mesa Camping',
+    categoria: 1,
+    image: "../Recursos/MesaCamping1.jpg"
+  },
+  {
+    id: 18,
+    name: 'Percheros',
+    categoria: 5,
+    image: "../Recursos/Perchero1.jpg"
+  },
+  {
+    id: 19,
+    name: 'Desayunador',
+    categoria: 1,
+    image: "../Recursos/Desayunador1.jpg"
+  },
+  {
+    id: 20,
+    name: 'Ordenador Montessori',
+    categoria: 4,
+    image: "../Recursos/OrdenadorMontessori1.jpg"
+  },
+  {
+    id: 21,
+    name: 'Cajon de madera',
+    categoria: 4,
+    image: "../Recursos/CajonMadera1.jpg"
+  },
+  {
+    id: 22,
+    name: 'Gervasoni',
+    categoria: 1,
+    image: "../Recursos/Gervasoni1.jpg"
+  },
+  {
+    id: 23,
+    name: 'Mesedora',
+    categoria: 5,
+    image: "../Recursos/Mesedora.jpg"
+  },
+  {
+    id: 24,
+    name: 'Tateti',
+    categoria: 4,
+    image: "../Recursos/Tateti1.jpg"
+  },
+  {
+    id: 25,
+    name: 'Lampara Rustica',
+    categoria: 5,
+    image: "../Recursos/Lampara1.jpg"
+  },
+  {
+    id: 26,
+    name: 'Silla Infantil',
+    categoria: 4,
+    image: "../Recursos/SillaInfantil1.jpg"
+  },
+  {
+    id: 27,
+    name: 'Mesa de TV',
+    categoria: 1,
+    image: "../Recursos/MesaTV1.jpg"
   }
-
 ]
+
 
 //Esta parte controla las fotos dentro de cada producto del catalogo, esta solamente admite 3 fotos al mismo tiempo
 //Para agregar fotos para algun producto hay que agregar una de las secciones abajo entre [ ] y cambiar la direccion de la foto en "../Recursos/Canastos1.png"
@@ -348,6 +429,10 @@ const Productlist = [
       id: 1,
       description: 'Modular de 080, 100, 120, 150 y 200 cm',
       image: "../Recursos/Modular1metro.jpeg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Modular1.jpg"
     }
   ],
   [ //ID 3
@@ -460,6 +545,176 @@ const Productlist = [
       id: 1,
       description: 'Maceteros de multiples medidas',
       image: "../Recursos/Macetero1.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Mesitas de luz de distintos modelos',
+      image: "../Recursos/MesadeLuz1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/MesadeLuz2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/MesadeLuz3.jpg"
+    },
+    {
+      id: 4,
+      image: "../Recursos/MesadeLuz4.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Biblioteca Baja',
+      image: "../Recursos/BibliotecaBaja1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/BibliotecaBaja2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/BibliotecaBaja3.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Conjunto Comedor',
+      image: "../Recursos/Mesa1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Mesa2.jpg"
+    }
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Ordenador',
+      image: "../Recursos/Ordenador1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Ordenador2.jpg"
+    }
+
+  ],
+  [ //ID7
+    {
+      id: 1,
+      description: 'Mesa Camping',
+      image: "../Recursos/MesaCamping1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/MesaCamping2.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Percheros de pared',
+      image: "../Recursos/Perchero1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Perchero2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/Perchero3.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Desayunador',
+      image: "../Recursos/Desayunador1.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Ordenador Montessori',
+      image: "../Recursos/OrdenadorMontessori1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/OrdenadorMontessori2.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Cajon de madera con ruedas',
+      image: "../Recursos/CajonMadera1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/CajonMadera2.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Gervasoni',
+      image: "../Recursos/Gervasoni1.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Mesedora',
+      image: "../Recursos/Mesedora.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Tateti',
+      image: "../Recursos/Tateti1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Tateti2.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Lampara Rustica',
+      image: "../Recursos/Lampara1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Lampara2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/Lampara3.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Silla Infantil',
+      image: "../Recursos/SillaInfantil1.jpg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/SillaInfantil2.jpg"
+    }
+  ],
+  [
+    {
+      id: 1,
+      description: 'Mesa de TV',
+      image: "../Recursos/MesaTV1.jpg"
     }
   ]
 
