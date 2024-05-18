@@ -208,6 +208,11 @@ const Categorias = [
     id: 5,
     name: 'Deco',
     image: '../Recursos/Vinoteca1.jpg'
+  },
+  {
+    id: 6,
+    name: 'Cunas',
+    image: '../Recursos/CunaFuncional1.jpeg'
   }
 ]
 
