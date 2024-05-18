@@ -730,7 +730,7 @@ const Productlist = [
   ],
   [
     {
-      id: 6,
+      id: 1,
       description: 'Cuna Funcional',
       image: "../Recursos/CunaFuncional1.jpeg"
     },
