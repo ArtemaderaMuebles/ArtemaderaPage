@@ -733,6 +733,14 @@ const Productlist = [
       id: 6,
       description: 'Cuna Funcional',
       image: "../Recursos/CunaFuncional1.jpeg"
+    },
+    {
+      id: 2,
+      image: "../Recursos/Lampara2.jpg"
+    },
+    {
+      id: 3,
+      image: "../Recursos/Lampara3.jpg"
     }
   ]
 
