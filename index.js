@@ -383,11 +383,17 @@ const productlist = [
     name: 'Mesa de TV',
     categoria: 1,
     image: "../Recursos/MesaTV1.jpg"
+  },
+  {
+    id: 28,
+    name: 'Cuna Funcional',
+    categoria: 6,
+    image: "../Recursos/CunaFuncional1.jpeg"
   }
 ]
 
 
-//Esta parte controla las fotos dentro de cada producto del catalogo, esta solamente admite 3 fotos al mismo tiempo
+//Esta parte controla las fotos dentro de cada producto del catalogo.
 //Para agregar fotos para algun producto hay que agregar una de las secciones abajo entre [ ] y cambiar la direccion de la foto en "../Recursos/Canastos1.png"
 const Productlist = [
 
@@ -720,6 +726,13 @@ const Productlist = [
       id: 1,
       description: 'Mesa de TV',
       image: "../Recursos/MesaTV1.jpg"
+    }
+  ],
+  [
+    {
+      id: 6,
+      description: 'Cuna Funcional',
+      image: "../Recursos/CunaFuncional1.jpeg"
     }
   ]
 
