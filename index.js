@@ -202,7 +202,7 @@ const Categorias = [
   {
     id: 4,
     name: 'Infantil',
-    image: '../Recursos/Didacticas.jpeg'
+    image: '../Recursos/OrdenadorMontessori1.jpg'
   },
   {
     id: 5,
@@ -265,9 +265,9 @@ const productlist = [
   },
   {
     id: 8,
-    name: 'ArteMaderitas y cajones de madera',
+    name: 'Cajones de madera',
     categoria: 4,
-    image: "../Recursos/Didacticas.jpeg"
+    image: "../Recursos/CanastoMadera1.jpeg"
   },
   {
     id: 9,
@@ -298,7 +298,7 @@ const productlist = [
     id: 13,
     name: 'Mesitas de luz',
     categoria: 0,
-    image: "../Recursos/MesadeLuz1.jpg"
+    image: "../Recursos/MesadeLuz2.jpg"
   },
   {
     id: 14,
@@ -498,18 +498,14 @@ const Productlist = [
     {
       id: 1,
       description: 'Maderitas didácticas seleccionadas y Cajón de madera con ruedas',
-      image: "../Recursos/Didacticas.jpeg"
-    },
-    {
-      id: 2,
       image: "../Recursos/CanastoMadera1.jpeg"
     },
     {
-      id: 3,
+      id: 2,
       image: "../Recursos/CanastoMadera2.jpg"
     },
     {
-      id: 4,
+      id: 3,
       image: "../Recursos/CanastoMadera3.jpg"
     }
   ],
@@ -562,7 +558,7 @@ const Productlist = [
     {
       id: 1,
       description: 'Mesitas de luz de distintos modelos',
-      image: "../Recursos/MesadeLuz1.jpg"
+      image: "../Recursos/MesadeLuz4.jpg"
     },
     {
       id: 2,
@@ -571,10 +567,6 @@ const Productlist = [
     {
       id: 3,
       image: "../Recursos/MesadeLuz3.jpg"
-    },
-    {
-      id: 4,
-      image: "../Recursos/MesadeLuz4.jpg"
     }
   ],
   [ //ID7
